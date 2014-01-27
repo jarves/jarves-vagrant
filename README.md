@@ -21,3 +21,8 @@ The initial step "builds" a Kryn.cms with Symfony 2.5 and installs it. Target fo
 
 Use `TESTING=1 vagrant up` to fire the test suite. If you use this, the target folder is `./KrynCmsBundle/` because we checkout the main repository
 (if not exist already) and do not setup a functional Symfony installation. This is used in our CI build servers.
+
+Mysql credentials are:
+    user: root
+    pw: kryn
+    database name: symfony

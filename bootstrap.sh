@@ -20,6 +20,8 @@ then
     cp ../meta/build.composer.json composer.json
     cp ../meta/build.parameters.yml app/config/parameters.yml
     cp ../meta/build.routing_dev.yml app/config/routing_dev.yml
+    cp ../meta/build.routing.yml app/config/routing.yml
+    cp ../meta/config.kryn.xml app/config/config.kryn.xml
     cp ../meta/build.appkernel.php.txt app/AppKernel.php
 
     ../composer.phar update --prefer-dist --no-dev
