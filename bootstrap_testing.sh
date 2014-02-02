@@ -20,6 +20,5 @@ then
     chown -R www-data:www-data .
 
     Tests/Integration/skeletion/app/console kryncms:models:build
-    Tests/Integration/skeletion/app/console kryncms:schema:update
     Tests/Integration/skeletion/app/console kryncms:install:demo localhost /
 fi

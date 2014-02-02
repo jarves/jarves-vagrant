@@ -29,6 +29,5 @@ then
     chown -R www-data:www-data .
 
     app/console kryncms:models:build
-    app/console kryncms:schema:update
     app/console kryncms:install:demo localhost /
 fi
