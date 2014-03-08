@@ -34,6 +34,16 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
+    public function getCacheDir()
+    {
+        return '/tmp/symfony-kryn/cache/' . $this->environment;
+    }
+
+    public function getLogDir()
+    {
+        return '/tmp/symfony-kryn/logs';
+    }
+
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
