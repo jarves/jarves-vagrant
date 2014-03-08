@@ -12,9 +12,9 @@ then
     if [ ! -f v2.4.1.tar.gz ]
     then
         wget --no-check-certificate https://github.com/symfony/symfony-standard/archive/v2.4.1.tar.gz
-        tar xf v2.4.1.tar.gz
     fi
 
+    tar xf v2.4.1.tar.gz
     mv symfony-standard-* kryncms
     cd kryncms
     echo 'create database symfony; ' | mysql -uroot -pkryn
