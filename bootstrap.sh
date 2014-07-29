@@ -6,7 +6,7 @@ cd /vagrant/
 
 curl -sS https://getcomposer.org/installer | php
 
-if [ ! -d /vagrant/kryncms ]
+if [ ! -d /vagrant/jarvescms ]
 then
 
     if [ ! -f v2.4.1.tar.gz ]
@@ -15,30 +15,36 @@ then
     fi
 
     tar xf v2.4.1.tar.gz
-    mv symfony-standard-* kryncms
-    cd kryncms
-    echo 'create database symfony; ' | mysql -uroot -pkryn
+    mv symfony-standard-* jarvescms
+    cd jarvescms
+    echo 'create database symfony; ' | mysql -uroot -pjarves
 
-    cp ../meta/build.composer.json composer.json
+    # cp ../meta/build.composer.json composer.json
     cp ../meta/build.parameters.yml app/config/parameters.yml
     cp ../meta/build.routing_dev.yml app/config/routing_dev.yml
     cp ../meta/build.routing.yml app/config/routing.yml
-    cp ../meta/config.kryn.xml app/config/config.kryn.xml
+    cp ../meta/config.jarves.xml app/config/config.jarves.xml
     cp ../meta/build.appkernel.php.txt app/AppKernel.php
 
-    mkdir /tmp/symfony-kryn
-    mkdir /tmp/symfony-kryn/cache
-    mkdir /tmp/symfony-kryn/logs
+    mkdir /tmp/symfony-jarves
+    mkdir /tmp/symfony-jarves/cache
+    mkdir /tmp/symfony-jarves/logs
 
-    chown -R www-data /tmp/symfony-kryn
+    chown -R www-data /tmp/symfony-jarves
 
     ../composer.phar update --prefer-dist
 
     chown -R www-data:www-data .
 
-    app/console kryncms:models:build
-    app/console kryncms:install:demo localhost /
+    app/console jarvescms:models:build
+    app/console jarvescms:install:demo localhost /
 
-    chown -R www-data:www-data /tmp/symfony-kryn
-    chmod -R g+w /tmp/symfony-kryn
+    git clone https://github.com/jarves/jarves.git /src/Jarves
+    git clone https://github.com/jarves/jarves-publication.git /src/Jarves/Publication
+    git clone https://github.com/jarves/jarves-demotheme.git /src/Jarves/DemoTheme
+
+    chown -R www-data:www-data .
+
+    chown -R www-data:www-data /tmp/symfony-jarves
+    chmod -R g+w /tmp/symfony-jarves
 fi
