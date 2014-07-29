@@ -31,7 +31,7 @@ $ sudo su www-data --command='/var/www/jarvescms/app/console jarves:install:demo
 
 Open `http://localhost:8080/`.
 
-The initial step "builds" a Jarves.cms with Symfony 2.4 and installs it. Target folder is `/vagrant/jarvescms/`.
+The initial step "builds" a Jarves.cms with Symfony 2.4 and installs it. Target folder is `/var/www/jarvescms/`.
 
 <s>Use `TESTING=1 vagrant up` to fire the test suite. If you use this, the target folder is `./JarvesCmsBundle/` because we checkout the main repository
 (if not exist already) and do not setup a functional Symfony installation. This is used in our CI build servers.</s>
