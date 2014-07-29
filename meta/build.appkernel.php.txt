@@ -16,14 +16,19 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Propel\PropelBundle\PropelBundle(),
-	        new FOS\RestBundle\FOSRestBundle(),
-	        new JMS\SerializerBundle\JMSSerializerBundle(),
-	        new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
-            new Kryn\CmsBundle\KrynCmsBundle(),
-            new Kryn\DemoTheme\KrynDemoThemeBundle(),
-            new Kryn\Publication\KrynPublicationBundle(),
         );
+
+        if (class_exists('Jarves\JarvesBundle')) {
+            $bundles = array_merge($bundles, array(
+                new Jarves\JarvesBundle(),
+                new Jarves\DemoTheme\JarvesDemoThemeBundle(),
+                new Jarves\Publication\JarvesPublicationBundle(),
+                //new Propel\PropelBundle\PropelBundle(),
+                new FOS\RestBundle\FOSRestBundle(),
+                new JMS\SerializerBundle\JMSSerializerBundle(),
+                new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            ));
+        }
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
@@ -36,12 +41,12 @@ class AppKernel extends Kernel
 
     public function getCacheDir()
     {
-        return '/tmp/symfony-kryn/cache/' . $this->environment;
+        return '/tmp/symfony-jarves/cache/' . $this->environment;
     }
 
     public function getLogDir()
     {
-        return '/tmp/symfony-kryn/logs';
+        return '/tmp/symfony-jarves/logs';
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)

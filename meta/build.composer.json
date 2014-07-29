@@ -19,7 +19,17 @@
         "sensio/framework-extra-bundle": "~3.0",
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
-        "kryncms/kryncms-bundle": "*"
+
+        "propel/propel-bundle": "2.0.*@dev",
+        "sybio/image-workshop": ">=2",
+        "michelf/php-markdown": ">=1.3",
+        "composer\/composer": "1.0.*@dev",
+        "friendsofsymfony/rest-bundle": "1.1.*",
+        "jms/serializer-bundle": "0.12.*",
+        "willdurand/hateoas": "2.0.*@dev",
+        "nelmio/api-doc-bundle": "~2.5",
+        "richthegeek/phpsass": "dev-master",
+        "icap/html-diff": ">=1.0.1"
     },
     "scripts": {
         "post-install-cmd": [

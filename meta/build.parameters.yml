@@ -14,4 +14,4 @@ parameters:
     locale:            en
     secret:            asdadasd2e2131311@#$
 
-    kryn_admin_prefix: /kryn
+    jarves_admin_prefix: /jarves

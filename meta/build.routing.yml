@@ -1,2 +1,2 @@
-kryn_cms:
-    resource: "@KrynCmsBundle/Resources/config/routing.yml"
+jarves:
+    resource: "@JarvesBundle/Resources/config/routing.yml"
