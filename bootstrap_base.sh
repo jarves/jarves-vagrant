@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "~~~~ INSTALLING PACKAGES ~~~~"
 apt-get update
 
 apt-get install -y python-software-properties
@@ -7,6 +8,7 @@ add-apt-repository -y ppa:ondrej/php5
 
 apt-get update
 apt-get install -y htop iotop vim git curl
+echo "~~~~ COPIENG vimrc to /etc/vim/ ~~~~"
 cp /vagrant/vimrc /etc/vim/vimrc
 
 apt-get install -y php5-cli
@@ -15,6 +17,7 @@ apt-get install -y php5-gd
 apt-get install -y php5-mysql
 apt-get install -y php-apc
 apt-get install -y php5-fpm
+echo "~~~~ COPIENG PHP FILES ~~~~"
 cp /vagrant/php.ini /etc/php5/fpm/php.ini
 cp /vagrant/php-opcache.ini /etc/php5/fpm/conf.d/05-opcache.ini
 cp /vagrant/php-apc.ini /etc/php5/fpm/conf.d/20-apcu.ini
