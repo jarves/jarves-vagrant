@@ -3,6 +3,8 @@ Jarves.cms Vagrant
 
 This repository contains a Vagrantfile for Jarves.cms. You can use it to have a development version of Jarves.cms, to play around with it etc.
 
+**Does currently not work due to symlinks /vagrant/src and PropelBundle**
+
 Requirements:
 
     - VirtualBox
